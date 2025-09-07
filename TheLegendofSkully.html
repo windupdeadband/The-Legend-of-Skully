@@ -9,9 +9,20 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Legend of Skully.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Hide scrollbars but keep scrolling */
-body::-webkit-scrollbar { width: 0px; background: transparent; }
-body { scrollbar-width: none; -ms-overflow-style: none; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
+<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Hide scrollbars everywhere while keeping scrolling */
+html, body, .tw-story {
+  overflow: auto;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE 10+ */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+.tw-story::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
 $(document).on(':passageend', function () {
     window.scrollTo(0, 0);
 });
@@ -229,11 +240,9 @@ What should Skully and his friend do?
     &lt;br&gt;&lt;br&gt;
     Play again?
     &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
+        &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
         (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-        &lt;a href=&quot;https://windupdead.com/&quot; onclick=&quot;document.exitFullscreen()&quot;&gt;No&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Chicken out and go back home." tags="" position="550,1250" size="100,100">&lt;audio autoplay&gt;
+        &lt;a href=&quot;https://windupdead.com/&quot;&gt;No&lt;/a&gt;</tw-passagedata><tw-passagedata pid="12" name="Chicken out and go back home." tags="" position="550,1250" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bdde4408251c3dc8aa2757/1757273670005/los-lose.mp3/original/los-lose.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 &lt;div style=&quot;text-align:center;&quot;&gt;
@@ -247,7 +256,7 @@ What should Skully and his friend do?
     Play again?
     &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
         (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-        &lt;a href=&quot;https://windupdead.com/&quot; onclick=&quot;document.exitFullscreen()&quot;&gt;No&lt;/a&gt;</tw-passagedata><tw-passagedata pid="13" name="Go see what it is!" tags="" position="700,750" size="100,100">&lt;audio autoplay&gt;
+        &lt;a href=&quot;https://windupdead.com/&quot;&gt;No&lt;/a&gt;</tw-passagedata><tw-passagedata pid="13" name="Go see what it is!" tags="" position="700,750" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bddd0375cf7a2ee73fbe59/1757273349021/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
