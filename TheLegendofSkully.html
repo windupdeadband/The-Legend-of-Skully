@@ -9,7 +9,9 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Legend of Skully.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
+<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Hide scrollbars but keep scrolling */
+body::-webkit-scrollbar { width: 0px; background: transparent; }
+body { scrollbar-width: none; -ms-overflow-style: none; }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
 $(document).on(':passageend', function () {
     window.scrollTo(0, 0);
 });
