@@ -31,21 +31,46 @@ What should Skully do?
 [[Screw with a bear and see if that helps.]]
 
 [[Laser eyes.]]]</tw-passagedata><tw-passagedata pid="2" name="LoS" tags="" position="700,375" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3f8496a0304ea1af339d/1757101958283/los-zelda.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbc0bd004da1306e25994/1757199373164/los-welcome.mp3/original/los-welcome.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
+&lt;script&gt;
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+  const audio = document.getElementById(&quot;intro-sound&quot;);
+
+  function tryPlay() {
+    audio.play().catch(()=&gt;{});
+    removeListeners();
+  }
+
+  function removeListeners() {
+    [&quot;click&quot;,&quot;touchstart&quot;,&quot;scroll&quot;,&quot;keydown&quot;].forEach(ev =&gt;
+      window.removeEventListener(ev, tryPlay, { passive:true })
+    );
+  }
+
+  [&quot;click&quot;,&quot;touchstart&quot;,&quot;scroll&quot;,&quot;keydown&quot;].forEach(ev =&gt;
+    window.addEventListener(ev, tryPlay, { passive:true, once:true })
+  );
+});
+&lt;/script&gt;
+
+&lt;!-- Page art --&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/7ebba28b-31ab-49f7-a8c5-32d03423bd20/los-welcome-full.png&quot; width=&quot;100%&quot;&gt;
 
+&lt;!-- Intro text --&gt;
 &lt;div id=&quot;gameText&quot;&gt;
   (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
 
+
 Where should Skully start looking for his friends?
+
 
 [[Forest]]
 Town (LOCKED)
 Cave (LOCKED)]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Find a snack and think about it." tags="" position="600,625" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbc82fbf2a8472f937689/1757199491487/los-mushrooms-2.mp3/original/los-mushrooms-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bde355cea905086935428c/1757274967325/los-mushrooms-2.mp3/original/los-mushrooms-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/9c31e3c1-dd7f-4b29-b20c-935b812f547f/los-mushrooms.png&quot; width=&quot;100%&quot;&gt;
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
@@ -73,7 +98,7 @@ Skully sees a SKULLY-SIZED SHAPE in the aftermath of the bear’s TREE SMASH BON
 
 
 [[Go see what it is!]]]</tw-passagedata><tw-passagedata pid="5" name="Laser eyes." tags="" position="800,625" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb0bfb74ad2e68af9866d6/1757088765189/los-fire.mp3/original/los-fire.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bde4d1df46434098d6b0a5/1757275347020/los-fire.mp3/original/los-fire.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/9c2dd772-152f-4922-abe2-540b4173f830/los-forest-fire-still.png&quot; width=&quot;100%&quot;&gt;
@@ -87,7 +112,7 @@ Skully sees a SKULLY-SIZED SHAPE fleeing the inferno he’s created. Could that 
 
 
 [[Verify the SKULLY-SIZED SHAPE is one of Skully’s friends.]]]</tw-passagedata><tw-passagedata pid="6" name="Go with your gut and eat a PURPLE MUSHROOM." tags="" position="500,750" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb0819001a8f566e823e4e/1757087770806/los-butt-tunnel-formation.mp3/original/los-butt-tunnel-formation.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bde38c9ddedc045b582ea0/1757275022149/los-butt-tunnel-formation.mp3/original/los-butt-tunnel-formation.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 &lt;div style=&quot;display:flex; flex-direction:row; justify-content:center; align-items:center; gap:15px;&quot;&gt;
@@ -103,7 +128,7 @@ This will make it easy.
 
 
 [[Take the plunge.]]]</tw-passagedata><tw-passagedata pid="7" name="Take the plunge." tags="" position="500,875" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbcf085733343e792e49c/1757199602198/los-quantum-reunion-2.mp3/original/los-quantum-reunion-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bde39b5376193da20b9e99/1757275036831/los-quantum-reunion-2.mp3/original/los-quantum-reunion-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/51e895c4-0678-4b38-9d59-2ce4b704adce/los-quantum-reunion.gif&quot; width=&quot;100%&quot;&gt;
 
@@ -117,7 +142,7 @@ Let’s head back to REALITY and search for the SECRET SONG!
 
 
 [[Exit BUTT HYPERSPACE.]]]</tw-passagedata><tw-passagedata pid="8" name="Exit BUTT HYPERSPACE." tags="" position="500,1000" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3ea74bd49257eca2ca2d/1757101736826/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bddd0375cf7a2ee73fbe59/1757273349021/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 &lt;div style=&quot;display:flex; justify-content:center; align-items:center; gap:10px; width:100%; max-width:100vw; overflow:hidden;&quot;&gt;
