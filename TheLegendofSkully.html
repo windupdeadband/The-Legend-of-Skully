@@ -34,37 +34,12 @@ What should Skully do?
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbc0bd004da1306e25994/1757199373164/los-welcome.mp3/original/los-welcome.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-&lt;script&gt;
-document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-  const audio = document.getElementById(&quot;intro-sound&quot;);
-
-  function tryPlay() {
-    audio.play().catch(()=&gt;{});
-    removeListeners();
-  }
-
-  function removeListeners() {
-    [&quot;click&quot;,&quot;touchstart&quot;,&quot;scroll&quot;,&quot;keydown&quot;].forEach(ev =&gt;
-      window.removeEventListener(ev, tryPlay, { passive:true })
-    );
-  }
-
-  [&quot;click&quot;,&quot;touchstart&quot;,&quot;scroll&quot;,&quot;keydown&quot;].forEach(ev =&gt;
-    window.addEventListener(ev, tryPlay, { passive:true, once:true })
-  );
-});
-&lt;/script&gt;
-
-&lt;!-- Page art --&gt;
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/7ebba28b-31ab-49f7-a8c5-32d03423bd20/los-welcome-full.png&quot; width=&quot;100%&quot;&gt;
 
-&lt;!-- Intro text --&gt;
 &lt;div id=&quot;gameText&quot;&gt;
   (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
 
-
 Where should Skully start looking for his friends?
-
 
 [[Forest]]
 Town (LOCKED)
@@ -210,6 +185,7 @@ What should Skully and his friend do?
   &lt;!-- Congratulations text --&gt;
   &lt;div style=&quot;margin-bottom:20px;&quot;&gt;
     &lt;strong&gt;CONGRATULATIONS!!!&lt;/strong&gt;
+    
     You found the TREASURE and, together, you now have the power to open it!
     Embrace the SONIC RUPEE to feel the SECRET SONG vibrate through you.
   &lt;/div&gt;
