@@ -9,13 +9,19 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Legend of Skully.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Forest" tags="" position="700,500" size="100,100">&lt;audio autoplay&gt;
+<tw-storydata name="The Legend of Skully" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="35B77988-864A-4339-A4B8-FC9489772BEC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
+$(document).on(':passageend', function () {
+    window.scrollTo(0, 0);
+});
+
+// End Game Chest</script><tw-passagedata pid="1" name="Forest" tags="" position="700,500" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbbbe722a1727dd4668ae/1757199295960/los-forest.mp3/original/los-forest.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/95c251cc-345f-4183-80da-73422a74c323/los-forest-full.png&quot; width=&quot;100%&quot; alt=&quot;Spooky Tree&quot;&gt;
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully doesn’t see a trace of his friends anywhere. Just a bunch of trees and shit.
+
 
 What should Skully do?
 
@@ -24,13 +30,13 @@ What should Skully do?
 
 [[Screw with a bear and see if that helps.]]
 
-[[Laser eyes.]]]</tw-passagedata><tw-passagedata pid="2" name="Start the game" tags="" position="700,375" size="100,100">&lt;audio autoplay&gt;
-  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbc0bd004da1306e25994/1757199373164/los-welcome.mp3/original/los-welcome.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+[[Laser eyes.]]]</tw-passagedata><tw-passagedata pid="2" name="LoS" tags="" position="700,375" size="100,100">&lt;audio autoplay&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3f8496a0304ea1af339d/1757101958283/los-zelda.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/7ebba28b-31ab-49f7-a8c5-32d03423bd20/los-welcome-full.png&quot; width=&quot;100%&quot; alt=&quot;Spooky Tree&quot;&gt;
-
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/7ebba28b-31ab-49f7-a8c5-32d03423bd20/los-welcome-full.png&quot; width=&quot;100%&quot;&gt;
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
+Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
 
 
 Where should Skully start looking for his friends?
@@ -41,18 +47,19 @@ Town (LOCKED)
 Cave (LOCKED)]</tw-passagedata><tw-passagedata pid="3" name="Find a snack and think about it." tags="" position="600,625" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbc82fbf2a8472f937689/1757199491487/los-mushrooms-2.mp3/original/los-mushrooms-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
-&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/9c31e3c1-dd7f-4b29-b20c-935b812f547f/los-mushrooms.png&quot; width=&quot;100%&quot; alt=&quot;Spooky Tree&quot;&gt;
-
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/9c31e3c1-dd7f-4b29-b20c-935b812f547f/los-mushrooms.png&quot; width=&quot;100%&quot;&gt;
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
 Skully has always had a nose hole for finding rare FOREST MUSHROOMS, and he just hit the jackpot!
 
 He thinks the purple ones will help him form a connection with his friends. Or was it the red ones that do that, and the purple ones kill you instantly...
+
 
 What should he do?
 
 
 [[Go with your gut and eat a PURPLE MUSHROOM.]]
 
-(link: &quot;Try something else. This isn’t worth the risk.&quot;)[(goto: &quot;Forest&quot;)]</tw-passagedata><tw-passagedata pid="4" name="Screw with a bear and see if that helps." tags="" position="700,625" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Laser eyes." tags="" position="800,625" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="Go with your gut and eat a PURPLE MUSHROOM." tags="" position="500,750" size="100,100">&lt;audio autoplay&gt;
+(link: &quot;Try something else. This isn’t worth the risk.&quot;)[(goto: &quot;Forest&quot;)]]</tw-passagedata><tw-passagedata pid="4" name="Screw with a bear and see if that helps." tags="" position="700,625" size="100,100"></tw-passagedata><tw-passagedata pid="5" name="Laser eyes." tags="" position="800,625" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="Go with your gut and eat a PURPLE MUSHROOM." tags="" position="500,750" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb0819001a8f566e823e4e/1757087770806/los-butt-tunnel-formation.mp3/original/los-butt-tunnel-formation.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
@@ -64,23 +71,170 @@ What should he do?
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Only moments after eating the PURPLE MUSHROOM, Skully notices his butt getting VERY SHINY. Just as he had expected, the mushroom gives him SHINY BUTT TUNNEL powers, so he can create a QUANTUM BUTT TUNNEL between himself and his nearest friend!
 
+
 This will make it easy.
 
 
 [[Take the plunge.]]]</tw-passagedata><tw-passagedata pid="7" name="Take the plunge." tags="" position="500,875" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbcf085733343e792e49c/1757199602198/los-quantum-reunion-2.mp3/original/los-quantum-reunion-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
-&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/51e895c4-0678-4b38-9d59-2ce4b704adce/los-quantum-reunion.gif&quot; width=&quot;100%&quot; alt=&quot;Spooky Tree&quot;&gt;
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/51e895c4-0678-4b38-9d59-2ce4b704adce/los-quantum-reunion.gif&quot; width=&quot;100%&quot;&gt;
 
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully gets sucked inside-out into the QUANTUM BUTT TUNNEL and so does his friend, who has green eyes, as this is the FOREST LEVEL.
 
 Together again, Skully and his friend can now tune in the distant SECRET SONG with ease, because the closer they are to each other, the stronger the signals are on their TWO-WAY BRAIN RADIOS.
 
+
 Let’s head back to REALITY and search for the SECRET SONG!
 
 
 
-[[Exit BUTT HYPERSPACE.]]]</tw-passagedata><tw-passagedata pid="8" name="Exit BUTT HYPERSPACE." tags="" position="500,1000" size="100,100"></tw-passagedata></tw-storydata>
+[[Exit BUTT HYPERSPACE.]]]</tw-passagedata><tw-passagedata pid="8" name="Exit BUTT HYPERSPACE." tags="" position="500,1000" size="100,100">&lt;audio autoplay&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3ea74bd49257eca2ca2d/1757101736826/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;div style=&quot;display:flex; flex-direction:row; justify-content:center; align-items:center; gap:15px; flex-wrap: wrap;&quot;&gt;
+  &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/c4db5b1f-5c4a-4a74-a2cc-bf1a9c906c70/los-butt-tunnel-exit-brown.gif&quot; style=&quot;max-width:150px; height:auto;&quot;&gt;
+  &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/95431771-4822-4f10-9f27-797c25935631/los-skully-red-sideways.png&quot; style=&quot;max-width:100px; height:auto;&quot;&gt;
+  &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/aaa7148d-8375-48b6-940f-86f918329e07/los-skully-green-sideways.png&quot; style=&quot;max-width:100px; height:auto;&quot;&gt;
+  &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/565031b7-b310-48cc-88ef-e4644eece5cf/los-music-note-4.gif&quot; style=&quot;max-width:150px; height:auto;&quot;&gt;
+&lt;/div&gt;
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
+As soon as they return, they hear the once-faint sounds of the SECRET SONG loud-and-clearly.
+
+
+[[Where could it be taking them?]]]</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="800,375" size="100,100">(js: &quot;
+var zelda = document.getElementById(&#39;zelda-audio&#39;);
+if (zelda) {
+  try { zelda.play(); } catch(e) { console.log(&#39;Zelda audio blocked until interaction&#39;); }
+}
+
+var secret = document.getElementById(&#39;secret-audio&#39;);
+var bni = document.getElementById(&#39;bni-audio&#39;);
+
+window.openChest = function() {
+  var chestClosed = document.getElementById(&#39;chest-closed&#39;);
+  var chestOpen = document.getElementById(&#39;chest-open&#39;);
+  var rupee = document.getElementById(&#39;rupee&#39;);
+
+  if (chestClosed &amp;&amp; chestOpen &amp;&amp; rupee) {
+    chestClosed.style.display = &#39;none&#39;;
+    chestOpen.style.display = &#39;inline&#39;;
+    rupee.style.display = &#39;inline&#39;;
+  }
+
+  if (secret) {
+    try { secret.play(); } catch(e) { console.log(&#39;Secret audio blocked&#39;); }
+  }
+};
+
+window.toggleBni = function() {
+  if (bni) {
+    if (bni.paused) { try { bni.play(); } catch(e) { console.log(&#39;BNI audio blocked&#39;); } }
+    else { bni.pause(); }
+  }
+};
+&quot;)</tw-passagedata><tw-passagedata pid="10" name="Where could it be taking them?" tags="" position="500,1125" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;audio autoplay&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbd8b75cf7a2ee72258be/1757199756917/los-portal.mp3/original/los-portal.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/fd299498-979e-475f-886c-85d80ee8161e/los-portal-discovery-greenie-2.png&quot; width=&quot;50%&quot;&gt;
+
+The sounds of the SECRET SONG lead Skully and his friend to a doorway in the middle of a field. It is not attached to anything. No walls or other structures – there isn’t even a door!
+
+
+What should Skully and his friend do?
+
+
+[[Brave the portal.]]
+
+[[Chicken out and go back home.]]]</tw-passagedata><tw-passagedata pid="11" name="Brave the portal." tags="" position="450,1250" size="100,100">// chest audio stuff
+&lt;audio id=&quot;zelda-audio&quot; preload=&quot;auto&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3f8496a0304ea1af339d/1757101958283/los-zelda.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;audio id=&quot;bni-audio&quot; preload=&quot;auto&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbeab08978911a6008491/1757200046484/los-bni.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+&lt;audio id=&quot;secret-audio&quot; preload=&quot;auto&quot;&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbe9c7e29e46366e9b90b/1757200029951/los-victory.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+
+ // visual chest stuff
+&lt;div&gt;
+  &lt;img id=&quot;chest-closed&quot; src=&quot;CLOSED_CHEST_URL&quot; style=&quot;cursor:pointer;&quot; onclick=&quot;openChest();&quot;&gt;
+  &lt;img id=&quot;chest-open&quot; src=&quot;OPEN_CHEST_URL&quot; style=&quot;display:none; cursor:pointer;&quot;&gt;
+  &lt;img id=&quot;rupee&quot; src=&quot;RUPEE_URL&quot; style=&quot;display:none; cursor:pointer;&quot; onclick=&quot;toggleBni();&quot;&gt;
+&lt;/div&gt;
+
+ 
+
+CONGRATULATIONS!!!
+
+You found the TREASURE and, together, you now have the power to open it!
+
+Embrace the SONIC RUPEE to feel the SECRET SONG vibrate through you.
+
+
+
+
+
+&lt;div style=&quot;display:flex; justify-content:center; position:relative; margin-left:80px;&quot;&gt;
+  &lt;div style=&quot;position:relative; display:inline-block;&quot;&gt;
+    &lt;!-- Closed chest --&gt;
+    &lt;img id=&quot;chest-closed&quot; src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/b91101ff-a601-416d-84c9-e96912a8823c/los-chest-closed.png&quot;
+         alt=&quot;Closed Chest&quot;
+         style=&quot;cursor:pointer; max-width:100%; height:auto;&quot;
+         onclick=&quot;openChest()&quot;&gt;
+
+    &lt;!-- Open chest --&gt;
+    &lt;img id=&quot;chest-open&quot; src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/548d78e3-2d60-44c0-92b9-a0779f1c9373/los-chest-open.png&quot;
+         alt=&quot;Open Chest&quot;
+         style=&quot;display:none; max-width:100%; height:auto;&quot;&gt;
+
+    &lt;!-- Rupee --&gt;
+    &lt;img id=&quot;rupee&quot; src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/6000aaf2-6905-4c89-b69e-c36b2bfca819/zelda-rupee.gif&quot;
+         alt=&quot;Play song&quot;
+         title=&quot;Boyz&#39; Nite In&quot;
+         style=&quot;cursor:pointer; display:none; position:absolute; top:-160px; left:50%; transform:translateX(-50%); width:200px; height:auto; z-index:10;&quot;
+         onclick=&quot;toggleAudio()&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enjoy and stay tuned for the next adventure...
+
+
+(link: &quot;Play again?&quot;)[(goto: &quot;LoS&quot;)]</tw-passagedata><tw-passagedata pid="12" name="Chicken out and go back home." tags="" position="550,1250" size="100,100">&lt;audio autoplay&gt;
+  &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bcbe0775cf7a2ee7225a80/1757199880844/los-lose.mp3/original/los-lose.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[&lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/d1dd4930-8b75-4beb-b66a-5591a7450248/los-chicken-full.png&quot; width=&quot;100%&quot;&gt;
+
+Skully and his friend head back to the safety and comfort of their home as chickens.
+
+Nothing bad happens to them, but nothing all that great happens either.
+
+And they never get to hear the SECRET SONG.
+
+
+Play again?
+
+
+(link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
+&lt;a href=&quot;https://windupdead.com/&quot; style=&quot;color: #4169E1; text-decoration: underline; cursor: pointer;&quot;&gt;No&lt;/a&gt;
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
