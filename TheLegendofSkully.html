@@ -49,8 +49,7 @@ What should Skully do?
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/7ebba28b-31ab-49f7-a8c5-32d03423bd20/los-welcome-full.png&quot; width=&quot;100%&quot;&gt;
 
-&lt;div id=&quot;gameText&quot;&gt;
-  (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
 
 
 Where should Skully start looking for his friends?
@@ -58,14 +57,31 @@ Where should Skully start looking for his friends?
 
 [[Forest]]
 Town (LOCKED)
-[Cave (LOCKED)]
+Cave (LOCKED)
 &lt;/div&gt;
 
 
 &lt;a href=&quot;https://windupdead.com/&quot; 
-   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer; font-size:20px;&quot;&gt;
-Go back to NORMAL.
-(Also hit ESC if you&#39;re on a computer.)&lt;/a&gt;]</tw-passagedata><tw-passagedata pid="3" name="Find a snack and think about it." tags="" position="425,625" size="100,100">&lt;audio autoplay&gt;
+   target=&quot;_top&quot;
+   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;
+   onclick=&quot;
+     event.preventDefault(); // stop immediate navigation
+     // Fire fake ESC
+     var escEvent = new KeyboardEvent(&#39;keydown&#39;, {
+       key: &#39;Escape&#39;,
+       code: &#39;Escape&#39;,
+       keyCode: 27,
+       which: 27,
+       bubbles: true
+     });
+     document.dispatchEvent(escEvent);
+     // Navigate after short delay
+     setTimeout(function() {
+       window.top.location.href = &#39;https://windupdead.com/&#39;;
+     }, 100);
+   &quot;&gt;
+  Go back to NORMAL.
+&lt;/a&gt;]</tw-passagedata><tw-passagedata pid="3" name="Find a snack and think about it." tags="" position="425,625" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bde355cea905086935428c/1757274967325/los-mushrooms-2.mp3/original/los-mushrooms-2.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
@@ -255,11 +271,13 @@ What should Skully and his friend do?
     Enjoy and stay tuned for the next adventure...
     &lt;br&gt;&lt;br&gt;
     Play again?
-&lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
+    &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
   (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-  &lt;a href=&quot;https://windupdead.com/&quot; style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;No
-  &lt;/a&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Chicken out and go back home." tags="" position="425,1250" size="100,100">&lt;audio autoplay&gt;
+&lt;a href=&quot;https://windupdead.com/&quot; 
+   target=&quot;_top&quot;
+   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;
+  No
+&lt;/a&gt;</tw-passagedata><tw-passagedata pid="12" name="Chicken out and go back home." tags="" position="425,1250" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bdde4408251c3dc8aa2757/1757273670005/los-lose.mp3/original/los-lose.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 &lt;div style=&quot;text-align:center;&quot;&gt;
@@ -273,20 +291,23 @@ What should Skully and his friend do?
     Play again?
 &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
   (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-&lt;a href=&quot;https://windupdead.com/&quot; 
-   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;
-   onclick=&quot;
-     var escEvent = new KeyboardEvent(&#39;keydown&#39;, {
-       key: &#39;Escape&#39;,
-       code: &#39;Escape&#39;,
-       keyCode: 27,
-       which: 27,
-       bubbles: true
-     });
-     document.dispatchEvent(escEvent);
-   &quot;&gt;
-  No
-&lt;/a&gt;</tw-passagedata><tw-passagedata pid="13" name="Verify the SKULLY-SIZED SHAPE is one of Skully’s friends." tags="" position="900,750" size="100,100">&lt;audio autoplay&gt;
+  &lt;a href=&quot;https://windupdead.com/&quot; 
+     target=&quot;_top&quot;
+     style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;
+     onclick=&quot;
+       // Fire fake ESC before navigation
+       var escEvent = new KeyboardEvent(&#39;keydown&#39;, {
+         key: &#39;Escape&#39;,
+         code: &#39;Escape&#39;,
+         keyCode: 27,
+         which: 27,
+         bubbles: true
+       });
+       document.dispatchEvent(escEvent);
+     &quot;&gt;
+    No
+  &lt;/a&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Verify the SKULLY-SIZED SHAPE is one of Skully’s friends." tags="" position="900,750" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bb3ea74bd49257eca2ca2d/1757101736826/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
@@ -310,8 +331,8 @@ They follow the sound as it gets louder and louder.
 &lt;/audio&gt;
 
 &lt;img src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/96c7a135-163d-4fd6-bba1-3e2c20020a9e/los-mushroom-death.png&quot; width=&quot;100%&quot;&gt;
-
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Uh oh...
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[
+Uh oh...
 
 Maybe you shouldn&#39;t have second-guessed yourself, as these were the
 kill-you-instantly type.
@@ -320,9 +341,11 @@ kill-you-instantly type.
 Play again?
 &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
   (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-  &lt;a href=&quot;https://windupdead.com/&quot; style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;No
-  &lt;/a&gt;
-&lt;/div&gt;]</tw-passagedata><tw-passagedata pid="15" name="The beehive and stick." tags="" position="625,750" size="100,100">&lt;audio autoplay&gt;
+&lt;a href=&quot;https://windupdead.com/&quot; 
+   target=&quot;_top&quot;
+   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;
+  No
+&lt;/a&gt;]</tw-passagedata><tw-passagedata pid="15" name="The beehive and stick." tags="" position="625,750" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bddc6f4702694500651db6/1757273200835/los-bear.mp3/original/los-bear.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
@@ -378,9 +401,11 @@ The worst part is, Skully never got to hear the SECRET SONG.
 Play again?
 &lt;div style=&quot;display:inline-block; padding-top:0.5em;&quot;&gt;
   (link: &quot;Yes&quot;)[(goto: &quot;LoS&quot;)]
-  &lt;a href=&quot;https://windupdead.com/&quot; style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;No
-  &lt;/a&gt;
-&lt;/div&gt;
+&lt;a href=&quot;https://windupdead.com/&quot; 
+   target=&quot;_top&quot;
+   style=&quot;font-weight:bold; color:#4183C4; text-decoration:none; cursor:pointer;&quot;&gt;
+  No
+&lt;/a&gt;
 ]</tw-passagedata><tw-passagedata pid="17" name="What could it be?" tags="" position="625,875" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bddd0375cf7a2ee73fbe59/1757273349021/los-music-trail.mp3/original/los-music-trail.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
