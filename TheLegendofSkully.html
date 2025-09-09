@@ -65,12 +65,20 @@ body::-webkit-scrollbar,
   }
   img { height: auto; }  /* ensure no distortion */
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Reset scroll to top on every passage
-$(document).on(':passageend', function () {
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// End Game Chest
+
+// --- Reliable scroll-to-top fix ---
+document.addEventListener("DOMContentLoaded", function() {
     window.scrollTo(0, 0);
 });
 
-// End Game Chest</script><tw-passagedata pid="1" name="Forest" tags="" position="700,500" size="100,100">&lt;audio autoplay&gt;
+window.addEventListener("load", function() {
+    window.scrollTo(0, 0);
+});
+
+window.addEventListener("pageshow", function() {
+    window.scrollTo(0, 0);
+});</script><tw-passagedata pid="1" name="Forest" tags="" position="700,500" size="100,100">&lt;audio autoplay&gt;
   &lt;source src=&quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68bddbeadf46434098d538b9/1757273068511/los-forest.mp3/original/los-forest.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
