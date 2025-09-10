@@ -529,7 +529,7 @@ Play again?
   z-index:4;
   opacity:1;
   pointer-events:auto;
-  animation: bear-move 2s ease-in-out 2.5s forwards,
+  animation: bear-move 2s ease-in-out 0s 2 forwards,
              hide-bear 0.2s linear 5s forwards;
   animation-fill-mode: forwards;
 }
@@ -631,7 +631,7 @@ Play again?
   playSound(thudSrc, 1.0, 1100);
   playSound(thudSrc, 1.0, 1400);
 
-  // Greenie grunt (triple-stack = ~300% loud, fires at 1.45s)
+  // Greenie grunt (triple-stack ~300% loud at 1.45s)
   playSound(gruntSrc, 1.0, 1450, 3);
 &lt;/script&gt;
 
