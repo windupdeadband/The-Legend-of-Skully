@@ -486,12 +486,9 @@ Play again?
   &lt;div style=&quot;width:auto; height:400px; position:relative; margin-right:-80px; z-index:4;&quot;&gt;
     &lt;img class=&quot;jon-bear&quot; 
          src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/5a4160b3-507c-405f-9c92-733f21499735/los-Jon-Bear.gif&quot;
-         style=&quot;position:absolute; bottom:-5px; height:100%; width:auto; z-index:4; pointer-events:auto;&quot;
          title=&quot;Jon Bear&amp;#10;❤️sf2lvr69&quot;&gt;
     &lt;img class=&quot;dead-bear&quot;
          src=&quot;https://images.squarespace-cdn.com/content/v1/59dd165be3df28f9e45dae23/ae15d5dc-69c0-4fbb-abc1-22474eb4ce30/los-dead-Jon-Bear.gif?format=500w&quot;
-         style=&quot;position:absolute; bottom:-5px; height:50%; width:auto; z-index:3; opacity:0; pointer-events:none;
-                transform: translate(-50px, 35px);&quot;
          title=&quot;Dead Jon Bear&amp;#10;❤️sf2lvr6&#39;↓&quot;&gt;
     &lt;!-- Bear death puffs --&gt;
     &lt;img class=&quot;bear-puff1&quot;
@@ -521,15 +518,35 @@ Play again?
          style=&quot;position:absolute; bottom:0; width:100%; height:auto; z-index:2; opacity:0;&quot;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;style&gt;
-/* Bear shuffle then collapse at 5s */
+/* Force proper starting states */
 .jon-bear {
-  animation: bear-move 2s ease-in-out 2.5 forwards,
+  position:absolute;
+  bottom:-5px;
+  height:100%;
+  width:auto;
+  z-index:4;
+  opacity:1;
+  pointer-events:auto;
+  animation: bear-move 2s ease-in-out 2.5s forwards,
              hide-bear 0.2s linear 5s forwards;
+  animation-fill-mode: forwards;
 }
 .dead-bear {
+  position:absolute;
+  bottom:-5px;
+  height:50%;
+  width:auto;
+  z-index:3;
+  opacity:0;
+  pointer-events:none;
+  transform: translate(-50px, 35px);
   animation: show-bear 0.2s linear 5s forwards, enable-hover 0s linear 5s forwards;
+  animation-fill-mode: forwards;
 }
+
+/* Bear death puffs */
 .bear-puff1 { animation: bear-puff 1s ease-out 5s forwards; }
 .bear-puff2 { animation: bear-puff 1s ease-out 5.1s forwards; }
 .bear-puff3 { animation: bear-puff 1s ease-out 5.2s forwards; }
@@ -537,6 +554,8 @@ Play again?
 @keyframes hide-bear { to { opacity:0; pointer-events:none; } }
 @keyframes show-bear { to { opacity:1; } }
 @keyframes enable-hover { to { pointer-events:auto; } }
+
+/* Trees fall staggered */
 .tree-standing.t2 { animation: tree-fall-hide 0.2s linear 0.8s forwards; }
 .tree-fallen.t2   { animation: tree-fall-show 0.2s linear 0.8s forwards; }
 .tree-standing.t3 { animation: tree-fall-hide 0.2s linear 1.1s forwards; }
@@ -545,6 +564,8 @@ Play again?
 .tree-fallen.t4   { animation: tree-fall-show 0.2s linear 1.4s forwards; }
 @keyframes tree-fall-hide { to { opacity:0; } }
 @keyframes tree-fall-show { to { opacity:1; } }
+
+/* Greenie */
 .greenie {
   animation: greenie-fall 0.6s ease-in 0.8s forwards,
              greenie-shiver 0.3s ease-in-out infinite 1.4s,
@@ -563,6 +584,8 @@ Play again?
 @keyframes greenie-hop { 0% { bottom:0; } 50% { bottom:9px; } 100% { bottom:0; } }
 @keyframes greenie-move { 0% { transform: translateX(0); } 100% { transform: translateX(-150px); } }
 @keyframes greenie-wobble { 0%,100% { transform:rotate(0deg);} 25%{transform:rotate(3deg);} 75%{transform:rotate(-3deg);} }
+
+/* Dust puff */
 .dust { animation: dust-puff 0.6s ease-out 1.35s forwards; }
 @keyframes dust-puff {
   0% { opacity:0; transform:scale(0.5); }
@@ -570,12 +593,16 @@ Play again?
   60% { opacity:0.55; transform:scale(1); }
   100% { opacity:0; transform:scale(1.2); }
 }
+
+/* Bear death puffs */
 @keyframes bear-puff {
   0% { opacity:0; transform:scale(0.5); }
   30% { opacity:0.69; transform:scale(1.3); }
   60% { opacity:0.55; transform:scale(1.1); }
   100% { opacity:0; transform:scale(1.5); }
 }
+
+/* Bear shuffle */
 @keyframes bear-move {
   0%   { transform: translateX(0); }
   25%  { transform: translateX(20px); }
@@ -584,6 +611,7 @@ Play again?
   100% { transform: translateX(0); }
 }
 &lt;/style&gt;
+
 &lt;script&gt;
   function playSound(src, volume = 1.0, delay = 0, repeat = 1) {
     setTimeout(() =&gt; {
@@ -594,15 +622,19 @@ Play again?
       }
     }, delay);
   }
+
   const thudSrc  = &quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68c0ab3b9e055d23e73162e9/1757457213060/los-bear-thud.mp3/original/los-bear-thud.mp3&quot;;
   const gruntSrc = &quot;https://static1.squarespace.com/static/59dd165be3df28f9e45dae23/t/68c0d4725d20b963b319dc59/1757467763703/los-grunt.mp3/original/los-grunt.mp3&quot;;
+
   // Tree thuds
   playSound(thudSrc, 1.0, 800);
   playSound(thudSrc, 1.0, 1100);
   playSound(thudSrc, 1.0, 1400);
+
   // Greenie grunt (triple-stack = ~300% loud, fires at 1.45s)
   playSound(gruntSrc, 1.0, 1450, 3);
 &lt;/script&gt;
+
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully click-clacks over to the stick and uses it to bat down the beehive. He then skewers the hive with the stick and flings it at the bear.
 
 The bear uses Zangief’s DOUBLE LARIAT move from Street Fighter to fend off the bees that he’s apparently allergic to. The bear suffocates and dies from the bees’ stings, but not before knocking out a few acres of trees.
@@ -610,7 +642,6 @@ The bear uses Zangief’s DOUBLE LARIAT move from Street Fighter to fend off the
 Success!
 
 Skully sees a SKULLY-SIZED SHAPE in the aftermath of the bear’s TREE SMASH BONUS STAGE performance.
-
 
 [[What could it be?]]]
 
