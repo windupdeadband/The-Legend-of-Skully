@@ -2355,7 +2355,7 @@ game.addEventListener(&quot;mouseleave&quot;,()=&gt;{firing=false;stopLaserSound
   var iframe = wrap.querySelector(&quot;iframe&quot;);
 
   function fitCavey(){
-    var scale = Math.min(1, window.innerWidth / 960);
+    var scale = Math.min(1, document.documentElement.clientWidth / 960);
 
     iframe.style.transform = &quot;scale(&quot; + scale + &quot;)&quot;;
     iframe.style.width = &quot;960px&quot;;
