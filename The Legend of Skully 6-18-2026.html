@@ -766,7 +766,7 @@ losPlaySound(welcomeSrc, 1.0, 5550, false, 0);
 
 &lt;div class=&quot;los-intro-text&quot;&gt;
 
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to unlock the TREASURE with their combined powers.
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Skully awakens in the middle of the night to the distant sound of a SECRET SONG. He flips on a light and looks around, but sees all of his housemates are missing. He must find at least one of them to help LOCATE and UNLOCK the SECRET SONG TREASURE.
 
 
 Where should Skully start looking for his friends?
@@ -1519,7 +1519,8 @@ What should Skully do for light?
 [[Use Skully&#39;s LASER EYES like a flashlight.]]
 
 [[Go in blind and hope you bump into one of Skully&#39;s friends.]]]</tw-passagedata><tw-passagedata pid="18" name="Switch LASER EYES to PRECISION MODE." tags="" position="1375,1125" size="100,100">&lt;!-- HARLOWE PASSAGE-ONLY. Last working Cavey Rescue version plus stronger bats and expanded instructions. --&gt;
-&lt;iframe title=&quot;Cavey Rescue&quot; width=&quot;960&quot; height=&quot;540&quot; style=&quot;display:block;margin:0 auto;border:0&quot;
+&lt;div id=&quot;caveyFrameWrap&quot; style=&quot;width:960px;max-width:100%;margin:0 auto;overflow:visible;position:relative;&quot;&gt;
+&lt;iframe title=&quot;Cavey Rescue&quot; width=&quot;960&quot; height=&quot;540&quot; scrolling=&quot;no&quot; style=&quot;display:block;border:0;transform-origin:top left;&quot;
 srcdoc=&#39;
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -1593,7 +1594,7 @@ srcdoc=&#39;
     &lt;div id=&quot;cross&quot;&gt;&lt;/div&gt;
 
     &lt;div id=&quot;howTo&quot; class=&quot;overlay&quot; style=&quot;display:none;&quot;&gt;
-      &lt;p&gt;Click/Tap where you want Skully to shoot.&lt;br&gt;Hold it down to keep it vaporizing.&lt;br&gt;Target &lt;span class=&quot;glow&quot;&gt;GUANO STALACTITES&lt;/span&gt; and &lt;span class=&quot;glow&quot;&gt;STALAGMITES&lt;/span&gt; to free Cavey.&lt;br&gt;Trap &lt;span class=&quot;glow&quot;&gt;DEATH BATS&lt;/span&gt; with falling guano.&lt;br&gt;&lt;br&gt;Click/Tap to begin.&lt;/p&gt;
+      &lt;p&gt;Click where you want Skully to shoot.&lt;br&gt;Hold it down to keep it vaporizing.&lt;br&gt;Target &lt;span class=&quot;glow&quot;&gt;GUANO STALACTITES&lt;/span&gt; and &lt;span class=&quot;glow&quot;&gt;STALAGMITES&lt;/span&gt; to free Cavey.&lt;br&gt;Trap &lt;span class=&quot;glow&quot;&gt;DEATH BATS&lt;/span&gt; with falling guano.&lt;br&gt;&lt;br&gt;Click to begin.&lt;/p&gt;
     &lt;/div&gt;
 
     &lt;div id=&quot;win&quot;&gt;&lt;div&gt;Skully rescued Cavey!&lt;/div&gt;
@@ -2346,8 +2347,35 @@ game.addEventListener(&quot;mouseleave&quot;,()=&gt;{firing=false;stopLaserSound
 &lt;/body&gt;
 &lt;/html&gt;
 &#39;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+(function(){
+  var wrap = document.getElementById(&quot;caveyFrameWrap&quot;);
+  var iframe = wrap.querySelector(&quot;iframe&quot;);
+
+  function fitCavey(){
+    var scale = Math.min(1, document.documentElement.clientWidth / 960);
+
+    iframe.style.transform = &quot;scale(&quot; + scale + &quot;)&quot;;
+    iframe.style.width = &quot;960px&quot;;
+    iframe.style.height = &quot;540px&quot;;
+
+    wrap.style.width = (960 * scale) + &quot;px&quot;;
+    wrap.style.paddingBottom = (540 * scale) + &quot;px&quot;;
+    wrap.style.height = &quot;0px&quot;;
+  }
+
+  fitCavey();
+  window.addEventListener(&quot;resize&quot;, fitCavey);
+  window.addEventListener(&quot;orientationchange&quot;, function(){
+    setTimeout(fitCavey, 250);
+  });
+})();
+&lt;/script&gt;
 
 &lt;span id=&quot;caveTrailBridge&quot; style=&quot;position:absolute;left:-9999px;top:-9999px;&quot;&gt;[[Cave Music Trail]]&lt;/span&gt;
+
 &lt;script&gt;
 window.addEventListener(&quot;message&quot;,function(e){
   if(e.data &amp;&amp; e.data.go===&quot;Cave Music Trail&quot;){
